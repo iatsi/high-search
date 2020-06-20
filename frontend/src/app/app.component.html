@@ -1,0 +1,46 @@
+
+<div class="paddB5">
+  <div class="display-inline width20 floatR">
+    <input type="text" class="" (keyup)="searchFunc($event)" [(ngModel)]="search.email" name="Email" placeholder="Email">
+  </div>
+  <div class="display-inline width20 floatR">
+    <input type="text" class="" (keyup)="searchFunc($event)" [(ngModel)]="search.environment" name="Environment" placeholder="Environment">
+  </div>
+</div>
+
+<table>
+  <tr>
+    <th>
+      <span>Unique id</span>
+    </th>
+    <th>
+      <span>Email</span>
+    </th>
+    <th>
+      <span>Component</span>
+    </th>
+    <th>
+      <span>Environment</span>
+    </th>
+    <th>
+      <span>Message</span>
+    </th>
+  </tr>
+ <tr *ngFor="let event of events">
+   <td>
+     <span>{{event._id}}</span>
+   </td>
+   <td>
+    <span>{{event.email}}</span>
+  </td>
+   <td>
+    <span>{{event.component}}</span>
+  </td>
+  <td>
+    <span>{{event.environment}}</span>
+  </td>
+  <td>
+    <span>{{event.message}}</span>
+  </td>
+ </tr>  
+</table>
