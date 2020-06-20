@@ -13,10 +13,16 @@ exports.addEvent = async function(req,res){
 }
 
 
+/**
+   * @param {req,res} : Logic to search is to be gathered from here. In order to make complex logic,
+   * below added query should be modified. 
+*/
+
 exports.searchEvent = async function(req,res){
     try {
         let query = generateSearchQuery(req.query);
         console.log(`Request handled by`,process.pid);
+
         let response =  await Event.find(query).lean();
         res.json({success:true, data:response});
     } catch(e){
